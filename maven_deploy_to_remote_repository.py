@@ -16,7 +16,10 @@ parser.add_argument('--dir', required=True, help='local repository path')
 parser.add_argument('--releases', default='ext-releases-local', help='releases repository name')
 parser.add_argument('--snapshots', default='ext-snapshots-local', help='snapshots repository name')
 parser.add_argument('--filters', type=filters_parser, help='list of comma-separated filters')
-parser.add_argument('--dry_run', type=bool, default=True, help='defines whether to execute generated commands or not')
+parser.add_argument('--dry_run',
+                    type=lambda s: s.lower() == str(True).lower(),
+                    default=True,
+                    help='defines whether to execute generated commands or not')
 
 args = parser.parse_args()
 

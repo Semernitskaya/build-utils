@@ -3,6 +3,10 @@ from zipfile import ZipFile
 import re
 
 
+def to_str(s):
+    return s or "None"
+
+
 def read_overlays(file):
     overlays = {}
     tree = ET.parse(file)
