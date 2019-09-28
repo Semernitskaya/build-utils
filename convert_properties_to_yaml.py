@@ -1,29 +1,7 @@
 import argparse
 from typing import Dict, Any
-
-from utils import *
-
-YAML_EXTENSION = ".yaml"
-
-COMMENT_START = "#"
-
-
-class Property:
-
-    def __init__(self, value, names: list):
-        self.value = value
-        self.names = names
-
-    def __init__(self, line: str):
-        split = line.split("=")
-        self.value = re.sub("[\r\n]+", "", split[1])
-        self.names = split[0].split(".")
-
-    def is_valid_property(line: str):
-        return re.match("[^\s]+=.*", line)
-
-    def is_comment_property(line: str):
-        return line.startswith(COMMENT_START)
+from build.utils.file_utils import *
+from build.utils.property_utils import *
 
 
 class Node:

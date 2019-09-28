@@ -1,7 +1,7 @@
 import argparse
 import shutil
 
-from utils import *
+from build.utils.file_utils import *
 
 
 def include_dir(dir, dir_path):

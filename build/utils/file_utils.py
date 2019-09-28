@@ -3,11 +3,11 @@ import xml.etree.ElementTree as ET
 from zipfile import ZipFile
 import re
 
-JAR_VERSION_PATTERN = "-\d.+"
+JAR_EXTENSION = ".jar"
 
+YAML_EXTENSION = ".yaml"
 
-def to_str(s):
-    return s or "None"
+JAR_VERSION_PATTERN = "(-\d.+)|(\\.jar)"
 
 
 def assert_file_exists(file):
@@ -53,4 +53,6 @@ def leave_jar_name(jar):
 
 
 def leave_jar_version(jar):
-    return re.search(JAR_VERSION_PATTERN, jar).group().replace("-", "", 1)
+    return re.search(JAR_VERSION_PATTERN, jar).group() \
+        .replace("-", "", 1) \
+        .replace(JAR_EXTENSION, "")

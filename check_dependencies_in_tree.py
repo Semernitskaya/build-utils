@@ -1,6 +1,6 @@
 import argparse
-from utils import *
-from maven_utils import *
+from build.utils.file_utils import *
+from build.utils.maven_utils import *
 
 DIFFERENT_PLATFORM_VERSION_STR = "different platform version"
 DIFFERENT_VERSION_STR = "!!! different version"
@@ -23,6 +23,10 @@ parser.add_argument('--print_skipped',
 args = parser.parse_args()
 assert_file_exists(args.pom)
 assert_file_exists(args.xml)
+
+
+def to_str(s):
+    return s or "None"
 
 
 def print_grouped_results(results, printed_head=None):

@@ -1,6 +1,6 @@
 import argparse
 
-from utils import *
+from build.utils.file_utils import *
 
 FORMAT_STR = "{:40}, {:40}, {:40}"
 
