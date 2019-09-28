@@ -10,7 +10,7 @@ NOT_FOUND_STR = "not found in overlays"
 VERSION_STR_TEMPLATE = " artifact {:100}, artifact_version {:15}, overlays_version {:15} line_number: {:3}"
 
 parser = argparse.ArgumentParser(
-    description='Compare overlays from jboss/wildfly standalone.xml and dependencies from dependency tree')
+    description='Compare overlays from Jboss/Wildfly standalone.xml and dependencies from dependency tree')
 parser.add_argument('--pom', required=True, help='project pom path')
 parser.add_argument('--mvn', required=True, help='maven command path')
 parser.add_argument('--xml', required=True, help='jboss/wildfly standalone.xml path')

@@ -20,7 +20,7 @@ def include_file(file):
 
 
 parser = argparse.ArgumentParser(
-    description='Copy maven-project sources to the target directory, ignore target-directories, idea-configs etc')
+    description='Copy Maven-project sources to the target directory, ignore target-directories, idea-configs etc')
 parser.add_argument('--source', required=True, help='Source directory path')
 parser.add_argument('--target', required=True, help='Target directory path')
 

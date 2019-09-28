@@ -8,7 +8,7 @@ def filters_parser(filters_line: str):
     return None if filters_line is None or filters_line.strip().__len__() == 0 else filters_line.split(",")
 
 
-parser = argparse.ArgumentParser(description='Deploy artifacts from local repository to remote')
+parser = argparse.ArgumentParser(description='Deploy artifacts from local Maven repository to remote')
 parser.add_argument('--url', required=True, help='remote repository URL')
 parser.add_argument('--login', required=True, help='login for remote repository')
 parser.add_argument('--pwd', required=True, help='password for remote repository')
