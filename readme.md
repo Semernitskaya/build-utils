@@ -1,4 +1,4 @@
-#### Python utilities for automation some processes and analysis during development of application (mainly Java + Maven application) 
+### Python utilities for automation some processes and analysis during development of application (mainly Java + Maven application) 
 Need Python version 3.6.8 or higher
 
 __check_dependencies_in_tree.py__ - compares overlays from Jboss/Wildfly standalone.xml and 
