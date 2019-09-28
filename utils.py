@@ -1,10 +1,23 @@
+import os
 import xml.etree.ElementTree as ET
 from zipfile import ZipFile
 import re
 
+JAR_VERSION_PATTERN = "-\d.+"
+
 
 def to_str(s):
     return s or "None"
+
+
+def assert_file_exists(file):
+    if not os.path.isfile(file):
+        raise ValueError("File {} not found".format(file))
+
+
+def assert_dir_exists(dir):
+    if not os.path.isdir(dir):
+        raise ValueError("Dir {} not found".format(dir))
 
 
 def read_overlays(file):
@@ -36,4 +49,8 @@ def get_jars(path):
 
 
 def leave_jar_name(jar):
-    return re.sub("-\d.+", "", jar)
+    return re.sub(JAR_VERSION_PATTERN, "", jar)
+
+
+def leave_jar_version(jar):
+    return re.search(JAR_VERSION_PATTERN, jar).group().replace("-", "", 1)

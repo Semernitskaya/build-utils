@@ -23,6 +23,17 @@ def is_test_dependency(split: []):
     return split.__len__() >= 5 and split[4] == "test"
 
 
+def build_maven_project(mvn_path, project_pom_path, dry_run=True):
+    cmd = "{} clean install -U " \
+          "-Dcheckstyle.skip " \
+          "-DskipTests=true " \
+          "-f {} " \
+          "-P discovery ".format(mvn_path, project_pom_path)
+    print(cmd)
+    if not dry_run:
+        os.system(cmd)
+
+
 def write_maven_dependency_tree(mvn_path, project_pom_path, tree_file_path="/tmp/dependencies.txt", dry_run=True):
     if os.path.exists(tree_file_path):
         os.remove(tree_file_path)

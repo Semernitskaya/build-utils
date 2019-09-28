@@ -21,6 +21,8 @@ parser.add_argument('--print_skipped',
                     help='defines whether to print dependencies skipped in generate_provided_dependencies')
 
 args = parser.parse_args()
+assert_file_exists(args.pom)
+assert_file_exists(args.xml)
 
 
 def print_grouped_results(results, printed_head=None):
