@@ -12,7 +12,7 @@ run example:
 ```bash
 python3 check_dependencies_in_tree.py --pom /home/usr/projects/discovery/pom.xml --mvn /opt/apache-maven-3.6.1/bin/mvn --xml /home/usr/Downloads/standalone.xml --platform_version 8.2
 ```
-__convert_properties_to_yaml.py__ - converts properties-file to yaml-file
+__convert_properties_to_yaml.py__ - converts properties-file to yaml-file, doesn't support properties lists
 
 view help:  
 ```bash
@@ -53,3 +53,9 @@ run example:
 ```bash
  python3 maven_deploy_to_remote_repository.py --url http://mvn/artifactory/ --login olga --pwd secret --dir /home/usr/docs/repository_20190708/ --filters ru,mex
 ```
+
+__tests__     
+run tests:  
+```bash
+python3 -m unittest 
+``` 
